@@ -25,4 +25,15 @@ public class FruitManager : MonoBehaviour {
         state.EnterState(this);
     }
 
+    public void AttemptHarvest() {
+        if (currentState == fruitRipe) {
+            SwitchState(fruitChewed);
+            currentState.EnterState(this);
+        }
+    }
+
+    public void EatFruit() {
+        Destroy(gameObject);
+    }
+
 }
